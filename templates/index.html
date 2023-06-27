@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>5 Scrapped videos</title>
+  </head>
+  <body>
+    <h1>Videos List</h1>
+    <table>
+      <tr>
+        {% for h in headings %}
+        <th>{{h}}</th>
+        {% endfor %}
+      </tr>
+      {% for vid in videos %}
+      <tr>
+        <td>{{vid['title']}}</td>
+        <td><a href={{'https://www.youtube.com'+vid['vid_url']}}>{{'https://www.youtube.com'+vid['vid_url']}}</a></td>
+        <td><img src={{vid['thumbnail']}}></td>
+        <td>{{vid['views']}}</td>
+        <td>{{vid['posted_time']}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
